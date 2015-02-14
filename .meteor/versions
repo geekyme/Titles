@@ -1,4 +1,5 @@
 alanning:package-stubber@0.0.9
+amplify@1.0.0
 application-configuration@1.0.4
 autopublish@1.0.2
 autoupdate@1.1.5
@@ -24,6 +25,7 @@ insecure@1.0.2
 jquery@1.11.3
 json@1.0.2
 launch-screen@1.0.1
+less@1.0.12
 livedata@1.0.12
 logging@1.0.6
 meteor@1.1.4
@@ -53,9 +55,12 @@ ui@1.0.5
 underscore@1.0.2
 url@1.0.3
 velocity:core@0.4.5
+velocity:html-reporter@0.4.1
 velocity:meteor-stubs@1.0.0_2
 velocity:node-soft-mirror@0.3.1
 velocity:shim@0.1.0
 velocity:test-proxy@0.0.4
 webapp@1.1.6
 webapp-hashing@1.0.2
+xolvio:cucumber@0.3.8
+xolvio:webdriver@0.1.8
