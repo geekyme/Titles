@@ -75,6 +75,13 @@
         });
     });
 
+    this.Then(/^I see a form error "([^"]*)"$/, function (errorMessage, callback) {
+      helper.world.browser.
+        getText('.help-block', function(err, text){
+          assert.equal(text, errorMessage);
+          callback();
+        });
+    });
   };
 
 })();

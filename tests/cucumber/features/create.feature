@@ -21,3 +21,10 @@ Feature: Create page (for authenticated users only)
     And I fill the form field "title" with "helloworld"
     When I submit the form
     Then I get redirected to route name "title"
+
+  Scenario: 
+    Given I am authenticated
+    And I navigate to "create"
+    And I fill the form field "title" with "hell"
+    When I submit the form
+    Then I see a form error "Title must be at least 5 characters"
