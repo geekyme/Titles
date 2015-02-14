@@ -6,7 +6,7 @@ Feature: Create page (for authenticated users only)
 
   Scenario: 
     Given I am unauthenticated
-    When I navigate to "/create"
+    When I navigate to "create"
     Then I should see a heading "Restricted content"
 
 

@@ -10,5 +10,5 @@ Feature: Homepage should show "Learn more about Titles"
 
   Scenario:
     Given I am a visitor
-    When I navigate to "/"
+    When I navigate to ""
     Then I should see a heading of "Learn more about Titles"
