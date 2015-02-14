@@ -13,8 +13,11 @@
         call(callback);
     });
 
+    // anything placed in "" inside the Scenarios will be available as a argument
     this.When(/^I navigate to "([^"]*)"$/, function (relativePath, callback) {
       helper.world.browser.
+        // dont use this, will break because webdriver can only access websites with absolute url - 
+        // url(relativePath).
         url(helper.world.cucumber.mirror.rootUrl + relativePath).
         call(callback);
     });
