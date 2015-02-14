@@ -8,7 +8,6 @@
 
     var helper = this;
 
-    /* UNAUTHENTICATED PATH */
     this.Given(/^I am unauthenticated$/, function (callback) {
       helper.world.browser.
         url(helper.world.cucumber.mirror.rootUrl).
@@ -20,8 +19,6 @@
           callback();
         });
     });
-
-    /* AUTHENTICATED PATH */
 
     this.Given(/^I am authenticated$/, function (callback) {
       helper.world.browser.
@@ -36,9 +33,13 @@
         })
     });
 
-    /* COMMON PATH */
-    
-    // this is used by the 2 execution paths - auth and unauth
+    this.Given(/^I fill the form field "([^"]*)" with "([^"]*)"$/, function(fieldName, fieldValue, callback){
+      helper.world.browser.
+        setValue('[name="'+fieldName+'"]', fieldValue).
+        call(callback)
+    })
+
+
     this.When(/^I navigate to "([^"]*)"$/, function (relativePath, callback) {
       helper.world.browser.
         // rootUrl includes a trailing slash, so relativePath should be in the form of "" not "/"
@@ -46,12 +47,30 @@
         call(callback);
     });
 
+    this.When(/^I submit the form$/, function(callback){
+      helper.world.browser.
+        submitForm('form').
+        // just wait a little while cuz we are executing a meteor insert from autoform
+        pause(1000).
+        call(callback)
+    })
+
     this.Then(/^I should see a heading "([^"]*)"$/, function (heading, callback) {
 
       helper.world.browser.
         getText('h1', function(err, text){
           assert.equal(text, heading);
           // you need to always add callback else the test is never going to pass
+          callback();
+        });
+    });
+
+    this.Then(/^I get redirected to route name "([^"]*)"$/, function (routeName, callback) {
+      helper.world.browser.
+        execute(function(){
+          return Router.current().route.getName();
+        }, function(err, ret){
+          assert.equal(ret.value, routeName);
           callback();
         });
     });
