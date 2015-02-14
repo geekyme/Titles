@@ -10,4 +10,7 @@ Feature: Create page (for authenticated users only)
     Then I should see a heading "Restricted content"
 
 
-
+  Scenario: 
+    Given I am authenticated
+    When I navigate to "create"
+    Then I should see a heading "Create a title"

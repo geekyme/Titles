@@ -8,13 +8,37 @@
 
     var helper = this;
 
+    /* UNAUTHENTICATED PATH */
     this.Given(/^I am unauthenticated$/, function (callback) {
       helper.world.browser.
-        // dont really need to do anything here, you should not be logged in when you open a new sesion 
-        call(callback)
+        url(helper.world.cucumber.mirror.rootUrl).
+        executeAsync(function(done){
+          Meteor.logout(function(err){
+            done(err);
+          });
+        }, function(err, ret){
+          callback();
+        });
     });
 
-    // anything placed in "" inside the Scenarios will be available as a argument
+    /* AUTHENTICATED PATH */
+
+    this.Given(/^I am authenticated$/, function (callback) {
+      helper.world.browser.
+        // open new browser and login
+        url(helper.world.cucumber.mirror.rootUrl). 
+        executeAsync(function(done){
+          Meteor.loginWithPassword('helloworld@gmail.com', 'helloworld1', function(err){
+            done(err);
+          });
+        }, function(err, ret){
+          callback();
+        })
+    });
+
+    /* COMMON PATH */
+    
+    // this is used by the 2 execution paths - auth and unauth
     this.When(/^I navigate to "([^"]*)"$/, function (relativePath, callback) {
       helper.world.browser.
         // rootUrl includes a trailing slash, so relativePath should be in the form of "" not "/"
