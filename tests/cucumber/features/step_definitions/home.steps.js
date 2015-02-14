@@ -10,7 +10,6 @@
 
     this.Given(/^I am a visitor$/, function (callback) {
       helper.world.browser.
-        url(helper.world.cucumber.mirror.rootUrl).
         call(callback);
     });
 
@@ -23,13 +22,12 @@
     this.Then(/^I should see a heading of "([^"]*)"$/, function (heading, callback) {
 
       helper.world.browser.
-        title(function (err, res) {
-          assert.equal(res.value, expectedTitle);
+        getText('h1', function(err, text){
+          assert.equal(text, heading);
+          // you need to always add callback else the test is never going to pass
           callback();
         });
     });
-
-
 
   };
 
