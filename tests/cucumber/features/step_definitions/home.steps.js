@@ -8,7 +8,7 @@
 
     var helper = this;
 
-    this.Given(/^I am on the home page$/, function (callback) {
+    this.Given(/^I am a visitor$/, function (callback) {
       helper.world.browser.
         url(helper.world.cucumber.mirror.rootUrl).
         call(callback);
@@ -20,7 +20,7 @@
         call(callback);
     });
 
-    this.Then(/^I should see the title of "([^"]*)"$/, function (expectedTitle, callback) {
+    this.Then(/^I should see a heading of "([^"]*)"$/, function (heading, callback) {
 
       helper.world.browser.
         title(function (err, res) {
