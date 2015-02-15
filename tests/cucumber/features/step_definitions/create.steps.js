@@ -51,7 +51,7 @@
       helper.world.browser.
         submitForm('form').
         // just wait a little while cuz we are executing a meteor insert from autoform
-        pause(1000).
+        pause(2000).
         call(callback)
     })
 
