@@ -7138,7 +7138,7 @@ var packageMetadata = {
             },
             "connections": {
               "type": "constant",
-              "value": 3
+              "value": 2
             },
             "timeout": {
               "type": "constant",
@@ -11289,7 +11289,7 @@ var packageMetadata = {
       "members": {
         "autoupdateVersion": {
           "type": "constant",
-          "value": "c5021a95d9917d73b3dd738bfc32907f5a8eed7c"
+          "value": "WTDpcsNG6EkMYWB6G"
         },
         "autoupdateVersionRefreshable": {
           "type": "constant",
@@ -11793,54 +11793,7 @@ var packageMetadata = {
   "velocity:node-soft-mirror": {},
   "xolvio:cucumber": {
     "cucumber": {
-      "type": "object",
-      "members": {
-        "mirror": {
-          "type": "object",
-          "members": {
-            "framework": {
-              "type": "constant",
-              "value": "cucumber"
-            },
-            "host": {
-              "type": "constant",
-              "value": "http://localhost:5000/"
-            },
-            "lastModified": {
-              "type": "constant",
-              "value": 1423976293352
-            },
-            "mongoUrl": {
-              "type": "constant",
-              "value": "mongodb://127.0.0.1:3001/cucumber"
-            },
-            "pid": {
-              "type": "constant",
-              "value": 19863
-            },
-            "port": {
-              "type": "constant",
-              "value": 5000
-            },
-            "rootUrl": {
-              "type": "constant",
-              "value": "http://localhost:5000/"
-            },
-            "rootUrlPath": {
-              "type": "constant",
-              "value": ""
-            },
-            "state": {
-              "type": "constant",
-              "value": "ready"
-            },
-            "type": {
-              "type": "constant",
-              "value": "node-soft-mirror"
-            }
-          }
-        }
-      }
+      "type": "object"
     }
   },
   "iron:core": {

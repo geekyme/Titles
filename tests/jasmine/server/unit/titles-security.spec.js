@@ -1,8 +1,9 @@
 describe("Titles security rules", function() {
-  var allow;
+  var allow, deny;
 
   beforeEach(function(){
     allow = Titles._velocityAllow;
+    deny = Titles._velocityDeny;
   });
 
   it("should allow inserts when user is logged in", function() {
@@ -17,4 +18,19 @@ describe("Titles security rules", function() {
     expect(response).toBe(false);
     
   });
+
+  it("should deny inserts when user is blacklisted", function() {
+    // stub the Meteor.user() call in the deny insert function to simulate a blacklisted user
+    spyOn(Meteor.users, 'findOne').and.returnValue({blacklisted: true});
+    var response = deny.insert('1212adsa2131', {})
+    expect(response).toBe(true);
+  });
+
+  it("should not deny inserts when user is not blacklisted", function() {
+    // stub the Meteor.user() call in the deny insert function to simulate a non-blacklisted user
+    spyOn(Meteor.users, 'findOne').and.returnValue({});
+    var response = deny.insert('1212adsa2131', {})
+    expect(response).toBe(false);
+  });
+
 });
