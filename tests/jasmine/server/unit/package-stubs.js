@@ -11288,7 +11288,7 @@ var packageMetadata = {
       "members": {
         "autoupdateVersion": {
           "type": "constant",
-          "value": "WTDpcsNG6EkMYWB6G"
+          "value": "ETFJMdFDhwD7yZX23"
         },
         "autoupdateVersionRefreshable": {
           "type": "constant",
