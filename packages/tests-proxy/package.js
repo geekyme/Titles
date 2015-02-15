@@ -7,5 +7,6 @@ Package.describe({
 
 Package.onUse(function (api) {
 	api.use("coffeescript", ["client", "server"]);
+	api.add_files("tests/jasmine/client/integration/home-newsletter.spec.js",["client"]);
 	api.add_files("tests/jasmine/server/integration/home-newsletter.spec.js",["server"]);
 });
