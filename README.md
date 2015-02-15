@@ -5,8 +5,14 @@ Credits to author http://www.meteortesting.com/ for teaching many useful techniq
 
 ## Installation
 
-```git clone https://github.com/geekyme/Titles.git```
+```
+git clone https://github.com/geekyme/Titles.git
+```
 
-```cd Titles && meteor update```
+```
+cd Titles && meteor update
+```
 
-```meteor```
+```
+meteor
+```
