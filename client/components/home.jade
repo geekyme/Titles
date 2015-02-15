@@ -1,0 +1,8 @@
+template(name="home")
+  h1 {{welcomeMessage}} 
+  a.btn.btn-primary(href="{{pathFor 'create'}}") Create a title
+  hr
+  form.js-subscribe
+    p {{subscribeStatus}}
+    label Subscribe to our newsletter
+    input.form-control.js-email(type="text")
